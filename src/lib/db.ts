@@ -15,10 +15,27 @@ interface Query {
  * @return {Promise<mysql.Connection>} A promise that resolves to the created connection.
  */
 export const dbConnection = async () => {
+  // Check if database connection is succesfull and console log error if any
+  // Return connection 
+
+  mysql
+    .createConnection({
+      host: process.env.DB_HOST,
+      database: process.env.DB_DATABASE,
+      user: process.env.DB_USER,
+      password: process.env.DB_PASSWORD,
+    })
+    .then((conn) => {
+      console.log("Database connection successful");
+      conn.end();
+    })
+    .catch((err) => {
+      console.error("Database connection failed: " + err.stack);
+    });
+  
   return await mysql.createConnection({
     host: process.env.DB_HOST,
     database: process.env.DB_DATABASE,
-    // port: 8889,
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
   });

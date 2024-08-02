@@ -27,17 +27,23 @@ const handler = NextAuth({
               (await bcrypt.compare(credentials.password, user.password))
             ) {
               // Any object returned will be saved in `user` key of the JWT
+              console.log("Successful Login");
               return user;
             } else {
               // If you return null or false then the credentials will be rejected
+              console.log("Failed Login #1");
               return null;
             }
           } else {
             // If you return null or false then the credentials will be rejected
+            console.log("Failed Login #2");
             return null;
           }
         } catch (error: any) {
           // If you return null or false then the credentials will be rejected
+          // Log error in console
+          console.log(error);
+          console.log("Failed Login #3");
           return null;
         }
       },
