@@ -1,0 +1,228 @@
+.login {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    .container {
+        width: 332px;
+        margin: 0 auto;
+    }
+
+    h1 {
+        color: $white-clr;
+        margin-bottom: 40px;
+    }
+
+    @media screen and (max-width: $exSmall) {
+        .container {
+            width: 100%;
+        }
+    }
+}
+
+form {
+    .ant-form-item {
+
+        input,
+        input[type=email],
+        .ant-input-affix-wrapper {
+            width: 100%;
+            border-radius: 10px;
+            padding: 11px 17px;
+            font-size: 1.125rem;
+            font-weight: $normal;
+            outline: none;
+            resize: none;
+            border: none;
+            box-shadow: none;
+            font-size: 14px;
+            color: $white-clr;
+            background-color: $blue-light-clr;
+
+            &.appearance_none {
+
+                &::-webkit-inner-spin-button,
+                &::-webkit-outer-spin-button {
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    appearance: none;
+                    margin: 0;
+                }
+            }
+
+            &:hover,
+            &:focus {
+                background-color: $blue-light-clr;
+                box-shadow: none;
+                border: none;
+            }
+
+            .anticon {
+                color: $white-clr !important;
+            }
+        }
+
+        .ant-input-password {
+            .ant-input {
+                background-color: transparent;
+            }
+        }
+
+        .ant-input-number-outlined {
+            width: 100%;
+            border-radius: 10px;
+            padding: 11px 17px;
+            font-weight: $normal;
+            outline: none;
+            resize: none;
+            box-shadow: none;
+            border: 1px solid transparent;
+            font-size: 14px;
+            color: $white-clr;
+            background-color: $blue-light-clr !important;
+
+            .ant-input-number-input {
+                padding: 0;
+                font-size: 14px;
+                color: $white-clr;
+                font-weight: $normal;
+                color: $white-clr;
+            }
+
+            &:hover,
+            &:focus,
+            &.ant-input-number-focused {
+                background-color: $blue-dark-clr !important;
+                box-shadow: none;
+            }
+        }
+
+        .ant-checkbox-wrapper {
+            color: $white-clr;
+            font-size: 14px;
+            font-weight: $normal;
+            font-family: $montserrat-font;
+
+            .ant-checkbox {
+                .ant-checkbox-inner {
+                    background-color: $blue-light-clr;
+                    border: none;
+                    width: 18px;
+                    height: 18px;
+                    border-radius: 5px;
+                }
+            }
+
+            &:hover,
+            &.ant-checkbox-wrapper-checked {
+                .ant-checkbox {
+                    .ant-checkbox-inner {
+                        background-color: $blue-dark-clr !important;
+                    }
+                }
+            }
+        }
+
+        .ant-form-item-control-input-content {
+            min-height: auto;
+            text-align: center;
+        }
+
+        .ant-btn-primary {
+            width: 100%;
+            font-size: 16px;
+            font-weight: $bold;
+            font-family: $montserrat-font;
+            color: $white-clr;
+            padding: 26px 25px;
+            background-color: $primary-clr;
+            border-radius: 10px;
+            border: none;
+            box-shadow: none;
+            outline: none !important;
+
+            &:hover,
+            &:focus {
+                background-color: $blue-dark-clr !important;
+            }
+        }
+
+        &.ant-form-item-has-error {
+
+            input[type=text],
+            input[type=email],
+            .ant-input-affix-wrapper {
+                border-color: $error-clr;
+                background-color: $blue-light-clr;
+
+                &:hover,
+                &:focus {
+                    background-color: $blue-light-clr;
+                    box-shadow: none;
+                    border-color: $error-clr;
+                }
+            }
+
+            .ant-form-item-explain-error {
+                color: $error-clr;
+                font-size: 12px;
+                text-align: left;
+            }
+        }
+
+        &.btn-wrap {
+            margin: 62px 0 0;
+
+            .ant-form-item-control-input-content {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 16px;
+
+                button {
+                    &.ant-btn {
+                        width: auto;
+                        padding: 14px 54px;
+                        height: auto;
+                    }
+
+                    &.ant-btn-dashed {
+                        font-size: 16px;
+                        font-weight: $bold;
+                        font-family: $montserrat-font;
+                        color: $white-clr;
+                        background-color: transparent;
+                        border-radius: 10px;
+                        border: 1px solid $white-clr;
+                        box-shadow: none;
+                        outline: none !important;
+
+                        &:hover,
+                        &:focus {
+                            background-color: $white-clr !important;
+                            color: $blue-dark-clr;
+                        }
+                    }
+                }
+            }
+        }
+
+        @media screen and (max-width: $Small) {
+            margin-bottom: 20px;
+
+        }
+    }
+
+    @media screen and (max-width: $Small) {
+        .btn-wrap {
+            .ant-form-item-control-input-content {
+                .ant-btn {
+                    width: calc(50% - 10px) !important;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,117 @@
+@mixin size($point) {
+    @if $point ==max-1800 {
+        @media (min-width: 1800px) {
+            @content;
+        }
+    }
+
+    @else if $point ==max-1560 {
+        @media (max-width: 1560px) {
+            @content;
+        }
+    }
+
+    @else if $point ==max-1366 {
+        @media (max-width: 1366px) {
+            @content;
+        }
+    }
+
+    @else if $point ==max-1280 {
+        @media (max-width: 1280px) {
+            @content;
+        }
+    }
+
+    @else if $point ==max-1200 {
+        @media (max-width: 1200px) {
+            @content;
+        }
+    }
+
+    @else if $point ==max-991 {
+        @media (max-width: 991px) {
+            @content;
+        }
+    }
+
+    @else if $point ==max-767 {
+        @media (max-width: 767px) {
+            @content;
+        }
+    }
+
+    @else if $point ==max-540 {
+        @media (max-width: 539px) {
+            @content;
+        }
+    }
+
+    @else if $point ==max-380 {
+        @media (max-width: 380px) {
+            @content;
+        }
+    }
+
+    @else if $point ==min-767 {
+        @media (min-width: 767px) {
+            @content;
+        }
+    }
+
+    @else if $point ==min-1280 {
+        @media (min-width: 1280px) {
+            @content;
+        }
+    }
+
+    @else if $point ==min-1366 {
+        @media (min-width: 1366px) {
+            @content;
+        }
+    }
+
+    @else if $point ==min-1560 {
+        @media (min-width: 1560px) {
+            @content;
+        }
+    }
+}
+
+@mixin headings {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @content;
+    }
+}
+
+@mixin ul_none {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+        list-style: none;
+    }
+}
+
+@keyframes fadeInFor {
+
+    0%,
+    75% {
+        opacity: 0;
+    }
+
+    90% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,33 @@
+{
+  "name": "cl-test-task",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@ant-design/icons": "5.4.0",
+    "@ant-design/nextjs-registry": "1.0.0",
+    "antd": "5.19.4",
+    "antd-img-crop": "4.22.0",
+    "bcrypt": "5.1.1",
+    "mysql2": "3.11.0",
+    "next": "14.2.5",
+    "next-auth": "4.24.7",
+    "react": "18",
+    "react-dom": "18"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "5.0.2",
+    "@types/node": "20",
+    "@types/react": "18",
+    "@types/react-dom": "18",
+    "eslint": "8",
+    "eslint-config-next": "14.2.5",
+    "sass": "1.77.8",
+    "typescript": "5"
+  }
+}
