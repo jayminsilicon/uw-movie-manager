@@ -1,7 +1,8 @@
-Simple Movie Manager
+## Simple Movie Manager
 
-Username : demo@siliconithub.com
-Password : Test@1234
+Username : ```demo@siliconithub.com```
+
+Password : ```Test@1234```
 
 ## Getting Started
 

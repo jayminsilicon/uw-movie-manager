@@ -1,7 +1,7 @@
 import { NextResponse, type NextRequest } from "next/server";
 
 export async function middleware(request: NextRequest) {
-  const currentUser = request.cookies.get("next-auth.session-token");
+  const currentUser = request.cookies.get("__Secure-next-auth.session-token");
   if (!currentUser) {
     if (request.nextUrl.pathname.includes("/api/")) {
       return NextResponse.json(
