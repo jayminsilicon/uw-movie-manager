@@ -6,12 +6,13 @@ import { useRouter } from "next/navigation";
 import { MovieFieldType, Notification } from "@/lib/global";
 import FormComponent from "../../FormComponent";
 
-interface Props {
-  type: string;
-  id: number;
+interface PageProps {
+  params: {
+    type: string;
+    id: string;
+  };
 }
-
-const MovieEdit: React.FC<Props> = (params: Props) => {
+const MovieEdit: React.FC<PageProps> = ({ params }) => {
   const [form] = Form.useForm();
   const router = useRouter();
   const [fileList, setFileList] = useState<UploadFile[]>([]);
