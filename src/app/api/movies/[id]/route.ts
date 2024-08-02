@@ -3,7 +3,8 @@ import { query, updateQuery } from "@/lib/db";
 import { sendResponse, UPLOAD_DIR } from "@/lib/global";
 import { type NextRequest } from "next/server";
 import path from "path";
-import fs from "fs";
+import { uploadData } from 'aws-amplify/storage';
+// import fs from "fs";
 
 /**
  * Retrieves movie details by ID from the database and returns them as a response.
@@ -58,15 +59,19 @@ export async function POST(request: NextRequest, context: any) {
 
     if (file && typeof file !== "string") {
       const buffer = Buffer.from(await file.arrayBuffer());
-      if (!fs.existsSync(UPLOAD_DIR)) {
-        fs.mkdirSync(UPLOAD_DIR);
-      }
+      // if (!fs.existsSync(UPLOAD_DIR)) {
+      //   fs.mkdirSync(UPLOAD_DIR);
+      // }
 
       newFilename = `file_${Date.now()}${path.extname(
         (body.image as File).name || ""
       )}`;
 
-      fs.writeFileSync(path.resolve(UPLOAD_DIR, newFilename), buffer);
+      uploadData({
+          path: `public/uploads/${newFilename}`,
+          data: buffer,
+      })
+      // fs.writeFileSync(path.resolve("public/uploads", newFilename), buffer);
 
       newFilename = `/uploads/${newFilename}`;
     } else {
@@ -97,7 +102,6 @@ export async function POST(request: NextRequest, context: any) {
       });
     }
   } catch (error: any) {
-    console.log(error);
     return sendResponse({
       status: 500,
       message: "Something went wrong.",
