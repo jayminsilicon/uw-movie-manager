@@ -97,6 +97,7 @@ export async function POST(request: NextRequest, context: any) {
       });
     }
   } catch (error: any) {
+    console.log(error);
     return sendResponse({
       status: 500,
       message: "Something went wrong.",
